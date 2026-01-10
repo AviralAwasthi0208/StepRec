@@ -1,7 +1,7 @@
 const STEPREC_APP_ORIGINS = [
   'http://localhost:5173',
   'https://steprec.app', // your future prod domain
-  'https://*.onrender.com' // Allow Render subdomains (update this with your specific URL after deployment)
+  'https://steprec.onrender.com' // Allow Render subdomains (update this with your specific URL after deployment)
 ];
 
 function isStepRecAppPage() {

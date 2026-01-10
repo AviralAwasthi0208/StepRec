@@ -7,6 +7,8 @@ import EditorLayout from './components/Editor/EditorLayout';
 import HelpModal from './components/HelpModal';
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import Footer from './components/Footer';
 import { ArrowLeft } from 'lucide-react';
 
 function App() { 
@@ -157,7 +159,7 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen font-sans transition-colors duration-300 ${darkMode ? 'bg-slate-900 text-white' : 'bg-gray-50 text-slate-900'}`}>
+    <div className={`min-h-screen flex flex-col font-sans transition-colors duration-300 ${darkMode ? 'bg-slate-900 text-white' : 'bg-gray-50 text-slate-900'}`}>
       <Toaster position="top-center" />
       
       <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} darkMode={darkMode} />
@@ -172,7 +174,7 @@ function App() {
         setShowHelp={setShowHelp} 
       />
 
-      <main className={location.pathname === '/editor' ? "" : "max-w-7xl mx-auto p-6 lg:p-8"}>
+      <main className={`flex-grow w-full ${location.pathname === '/editor' ? "" : "max-w-7xl mx-auto p-6 lg:p-8"}`}>
           <Routes>
             <Route path="/" element={
                 <Dashboard 
@@ -232,8 +234,11 @@ function App() {
                   onNewRecording={handleNewRecording}
                 />
             } />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
           </Routes>
       </main>
+
+      {location.pathname !== '/editor' && <Footer darkMode={darkMode} />}
     </div>
   );
 }
