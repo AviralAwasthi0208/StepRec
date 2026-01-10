@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Step Recorder Extension",
+  "version": "1.0",
+  "description": "Records web interactions for the Step Recorder App",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "tabs",
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Step Recorder"
+  },
+  "externally_connectable": {
+    "matches": [
+      "http://localhost/*", 
+      "http://127.0.0.1/*",
+      "https://*.onrender.com/*"
+    ]
+  }
+}
