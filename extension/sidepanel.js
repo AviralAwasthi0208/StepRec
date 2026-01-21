@@ -124,7 +124,7 @@ newRecordingBtn.addEventListener('click', () => {
 
 // 4. OPEN WORKFLOW GUIDE (Main App)
 openGuideBtn.addEventListener('click', () => {
-  const APP_URL = "http://localhost:5173"; // Update this for production
+  const APP_URL = "https://steprec.onrender.com"; // Updated to production URL
   
   chrome.tabs.create({ url: APP_URL }, (tab) => {
      // Optional: Send data to the app once opened if needed
