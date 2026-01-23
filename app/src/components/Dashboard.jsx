@@ -2,8 +2,16 @@ import React from 'react';
 import { Globe, Monitor, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Dashboard = ({ darkMode }) => {
+const Dashboard = ({ darkMode, extensionInstalled }) => {
   const navigate = useNavigate();
+
+  const handleWebRecorderClick = () => {
+    if (extensionInstalled) {
+      navigate('/record/web');
+    } else {
+      window.open('https://chromewebstore.google.com/detail/step-recorder-extension/aaflncmgkbcjaeheclhbciicmjneklnf', '_blank');
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in">
