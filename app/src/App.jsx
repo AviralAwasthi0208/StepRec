@@ -179,6 +179,7 @@ function App() {
             <Route path="/" element={
                 <Dashboard 
                   darkMode={darkMode}
+                  extensionInstalled={extensionInstalled}
                 />
             } />
             <Route path="/record/web" element={

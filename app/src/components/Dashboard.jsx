@@ -19,7 +19,7 @@ const Dashboard = ({ darkMode }) => {
       <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl px-4">
         {/* Web Recorder Card */}
         <div 
-          onClick={() => navigate('/record/web')}
+          onClick={handleWebRecorderClick}
           className={`group relative p-8 rounded-2xl border-2 cursor-pointer transition-all duration-300 hover:-translate-y-1 ${
             darkMode 
               ? 'bg-slate-800 border-slate-700 hover:border-blue-500 hover:shadow-blue-900/20' 
