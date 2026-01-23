@@ -41,15 +41,16 @@ const HelpModal = ({ isOpen, onClose, darkMode }) => {
                   <li className="flex gap-2"><CheckCircle size={16} className="text-green-500" /> No data collected silently</li>
                 </ul>
                 <a 
-                  href="#" 
-                  onClick={(e) => { e.preventDefault(); alert("In production, this opens the Chrome Web Store page."); }}
+                  href="https://chromewebstore.google.com/detail/step-recorder-extension/aaflncmgkbcjaeheclhbciicmjneklnf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-blue-500/20"
                 >
                   <Chrome size={20} />
                   Add to Chrome
                 </a>
                 <p className="text-xs mt-3 opacity-60">
-                  Version 1.0 • Verified Safe
+                  Version 1.0.1 • Verified Safe
                 </p>
                 <p className="text-xs mt-2 text-blue-500 font-medium">
                   Extensions for other browsers are coming soon!
